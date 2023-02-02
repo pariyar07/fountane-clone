@@ -20,7 +20,7 @@ const Product = () => {
     },
   ];
   return (
-    <section>
+    <section id="how-we-do-this" className="mt-20 pt-40">
       <div className="flex gap-32 ml-32 mb-20">
         <h2 className="font-inter text-lightBlue md:text-5xl 2xl:text-7xl text-4xl font-extrabold">
           Digital Product
@@ -40,19 +40,52 @@ const Product = () => {
             <div className="border-buttonGray border-2 rounded-full p-3 text-xl">
               <BsArrowRight />
             </div>
-            <p className="tracking-wide text-sm 2xl:text-xl">Our approach</p>
+            <p className="font-poppins font-semibold text-textGray tracking-wide 2xl:text-xl">
+              Our approach
+            </p>
           </a>
         </div>
       </div>
-      <ul>
+      <ul className="flex flex-col gap-10 mb-40">
         {productList.map((product, i) => {
           return (
             <li key={i}>
-              <ProductCard product={product} />
+              <ProductCard product={product} i={i} />
             </li>
           );
         })}
       </ul>
+      <div className="flex gap-60 ml-32 mb-20">
+        <h2 className="font-inter text-lightBlue md:text-5xl 2xl:text-7xl text-4xl font-extrabold">
+          Ventures
+          <br />
+          <span className="text-lightGray">Lab</span>
+        </h2>
+        <div className="mt-6 ml-16">
+          <p className="font-inter md:text-xl 2xl:text-4xl text-lg font-normal tracking-wide">
+            Co-create together
+            <br />
+            We build. You market
+            <br />
+          </p>
+          <p className="font-inter md:text-xl 2xl:text-4xl text-lg font-normal tracking-wide mt-2">
+            Strategically embedded tech partner that
+            <br />
+            will be with you for the long run.
+          </p>
+          <a
+            className="flex gap-4 items-center font-poppins font-semibold mt-10"
+            href="#how-we-do-this"
+          >
+            <div className="border-buttonGray border-2 rounded-full p-3 text-xl">
+              <BsArrowRight />
+            </div>
+            <p className="font-poppins font-semibold text-textGray tracking-wide 2xl:text-xl">
+              Learn more
+            </p>
+          </a>
+        </div>
+      </div>
     </section>
   );
 };

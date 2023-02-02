@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "../../components/navbar";
 import Hero from "../../components/Home/hero";
 import Product from "../../components/Home/productSection";
+import GridSection from "../../components/Home/gridSection";
 import Footer from "../../components/footer";
 
 const Homepage = () => {
@@ -10,6 +11,7 @@ const Homepage = () => {
       <Navbar />
       <Hero />
       <Product />
+      <GridSection />
       <Footer />
     </div>
   );
