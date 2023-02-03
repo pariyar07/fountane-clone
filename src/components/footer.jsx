@@ -22,7 +22,7 @@ const Footer = () => {
     ],
   };
   return (
-    <footer className="flex justify-around bg-footerBlue py-28">
+    <footer className="flex justify-around bg-footerBlue py-28 siteWidth">
       <div className="flex">
         <ul className="font-poppins">
           {footerItems?.firstRow.map((item, i) => {

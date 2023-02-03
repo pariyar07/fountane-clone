@@ -12,7 +12,7 @@ const Navbar = () => {
     "Contact Us",
   ];
   return (
-    <nav className="flex justify-between px-12 py-6 fixed bg-white z-30 w-full">
+    <nav className="flex justify-between px-12 py-6 fixed bg-white z-30 w-full siteWidth">
       <img src={Logo} alt="Fountane logo" className="cursor-pointer"></img>
       <ul className="flex gap-12">
         {navbarItems.map((item, i) => {
