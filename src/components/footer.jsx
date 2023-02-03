@@ -31,7 +31,7 @@ const Footer = () => {
                 className={`${
                   i === 0
                     ? "text-white tracking-widest md:text-xl text-xs md:mb-5 mb-3 font-bold"
-                    : "text-footerGray md:text-xl text-xs font-poppins md:mb-7 mb-2 font-normal"
+                    : "text-footerGray md:text-xl text-xs font-poppins md:mb-7 mb-2 font-normal cursor-pointer"
                 }`}
                 key={i}
               >
@@ -42,13 +42,12 @@ const Footer = () => {
         </ul>
         <ul className="font-poppins pl-40">
           {footerItems?.secondRow.map((item, i) => {
-            const newNotifText = "<span>[new]</span>";
             return (
               <li
                 className={`${
                   i === 0
                     ? "text-white tracking-widest md:text-xl text-xs md:mb-5 mb-3 font-bold"
-                    : "text-footerGray md:text-xl text-xs font-poppins md:mb-7 mb-2 font-normal"
+                    : "text-footerGray md:text-xl text-xs font-poppins md:mb-7 mb-2 font-normal cursor-pointer"
                 }`}
                 key={i}
                 dangerouslySetInnerHTML={{ __html: item }}
@@ -70,9 +69,9 @@ const Footer = () => {
           <img src={Arrow} alt="Arrow" />
         </div>
         <div className="flex gap-10 text-footerGray text-2xl mt-8">
-          <AiOutlineLinkedin />
-          <BsTwitter />
-          <BsInstagram />
+          <AiOutlineLinkedin className="cursor-pointer" />
+          <BsTwitter className="cursor-pointer" />
+          <BsInstagram className="cursor-pointer" />
         </div>
       </div>
     </footer>

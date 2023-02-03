@@ -9,9 +9,9 @@ const Hero = () => {
     <main className="px-12 pt-32 pb-12">
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-4 text-footerGray text-xl">
-          <BsInstagram />
-          <AiOutlineLinkedin />
-          <BsTwitter />
+          <BsInstagram className="cursor-pointer" />
+          <AiOutlineLinkedin className="cursor-pointer" />
+          <BsTwitter className="cursor-pointer" />
         </div>
         <div className="flex flex-col gap-20 font-inter ml-40">
           <div className="flex flex-col gap-8">
@@ -73,9 +73,14 @@ const Hero = () => {
               See how we do this
             </p>
           </a>
-          <div className="flex items-center p-4 shadow rounded-full text-xl cursor-pointer">
+          <motion.a
+            href="mailto:pariyarsatyam12@gmail.com?subject=Offer of Employment for Frontend Developer Role"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.8 }}
+            className="flex items-center p-4 shadow rounded-full text-xl cursor-pointer"
+          >
             <MdEmail />
-          </div>
+          </motion.a>
         </div>
       </div>
     </main>
