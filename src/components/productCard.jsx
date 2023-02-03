@@ -1,5 +1,6 @@
 import React from "react";
 import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const ProductCard = ({ product: { title, description, image }, i }) => {
   return (
@@ -22,10 +23,13 @@ const ProductCard = ({ product: { title, description, image }, i }) => {
         <p className="md:text-lg lg:text-xl 2xl:text-2xl text-xs font-poppins font-normal md:leading-9 md:tracking-wide tracking-tighter-2 leading-5 md:w-auto w-9/12">
           {description}
         </p>
-        <div className="flex items-center gap-6 text-poppins font-semibold tracking-wide mt-6">
+        <motion.div
+          whileTap={{ scale: 0.9 }}
+          className="flex items-center gap-6 text-poppins font-semibold tracking-wide mt-6"
+        >
           <BsArrowRight />
           <p>Learn more</p>
-        </div>
+        </motion.div>
       </div>
       <img
         src={image}

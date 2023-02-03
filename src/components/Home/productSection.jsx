@@ -3,6 +3,7 @@ import { BsArrowRight } from "react-icons/bs";
 import ProductCard from "../productCard";
 import ImageOne from "../../assets/productOne.png";
 import ImageTwo from "../../assets/productTwo.svg";
+import { motion } from "framer-motion";
 
 const Product = () => {
   const productList = [
@@ -27,31 +28,60 @@ const Product = () => {
           <br />
           <span className="text-lightGray">Studio</span>
         </h2>
-        <div className="mt-20">
+        <motion.div
+          initial={{
+            scale: 0.5,
+            translateY: 50,
+          }}
+          transition={{ duration: 0.5 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            translateX: 0,
+            translateY: 0,
+          }}
+          viewport={{ once: true }}
+          className="mt-20"
+        >
           <p className="font-inter md:text-xl 2xl:text-4xl text-lg font-normal tracking-wide">
             Defying challenges by building
             <br />
             <span className="font-extrabold">superior</span> product experiences
           </p>
-          <a
-            className="flex gap-4 items-center font-poppins font-semibold mt-10"
-            href="#how-we-do-this"
-          >
-            <div className="border-buttonGray border-2 rounded-full p-3 text-xl">
+          <a className="flex gap-4 items-center font-poppins font-semibold mt-10">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              className="border-buttonGray border-2 rounded-full p-3 text-xl"
+            >
               <BsArrowRight />
-            </div>
+            </motion.div>
             <p className="font-poppins font-semibold text-textGray tracking-wide 2xl:text-xl">
               Our approach
             </p>
           </a>
-        </div>
+        </motion.div>
       </div>
       <ul className="flex flex-col gap-10 mb-40">
         {productList.map((product, i) => {
           return (
-            <li key={i}>
+            <motion.li
+              initial={{
+                opacity: 0.3,
+                scale: 1,
+                translateX: -200,
+              }}
+              transition={{ duration: 0.6 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                translateX: 0,
+              }}
+              viewport={{ once: true }}
+              key={i}
+            >
               <ProductCard product={product} i={i} />
-            </li>
+            </motion.li>
           );
         })}
       </ul>
@@ -61,7 +91,21 @@ const Product = () => {
           <br />
           <span className="text-lightGray">Lab</span>
         </h2>
-        <div className="mt-6 ml-16">
+        <motion.div
+          initial={{
+            scale: 0.5,
+            translateY: 50,
+          }}
+          transition={{ duration: 0.5 }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+            translateX: 0,
+            translateY: 0,
+          }}
+          viewport={{ once: true }}
+          className="mt-6 ml-16"
+        >
           <p className="font-inter md:text-xl 2xl:text-4xl text-lg font-normal tracking-wide">
             Co-create together
             <br />
@@ -73,18 +117,19 @@ const Product = () => {
             <br />
             will be with you for the long run.
           </p>
-          <a
-            className="flex gap-4 items-center font-poppins font-semibold mt-10"
-            href="#how-we-do-this"
-          >
-            <div className="border-buttonGray border-2 rounded-full p-3 text-xl">
+          <a className="flex gap-4 items-center font-poppins font-semibold mt-10 cursor-pointer">
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.8 }}
+              className="border-buttonGray border-2 rounded-full p-3 text-xl"
+            >
               <BsArrowRight />
-            </div>
+            </motion.div>
             <p className="font-poppins font-semibold text-textGray tracking-wide 2xl:text-xl">
               Learn more
             </p>
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

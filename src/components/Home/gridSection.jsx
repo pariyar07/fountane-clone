@@ -8,6 +8,7 @@ import LogoTwo from "../../assets/gridTwoLogo.svg";
 import LogoThree from "../../assets/gridThreeLogo.svg";
 import LogoFour from "../../assets/gridFourLogo.svg";
 import { BsArrowRight } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const GridSection = () => {
   const gridList = [
@@ -39,7 +40,17 @@ const GridSection = () => {
       <ul className="grid grid-cols-2 gap-14 justify-between mt-40 mb-28">
         {gridList.map((item, i) => {
           return (
-            <li
+            <motion.li
+              initial={{
+                translateY: 300,
+              }}
+              transition={{ type: "spring", bounce: 0.5, duration: 1 }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+                translateY: 0,
+              }}
+              viewport={{ once: true }}
               className={`flex flex-col items-start justify-center ${
                 i === 3
                   ? "bg-gridLightBlue"
@@ -66,8 +77,9 @@ const GridSection = () => {
                 <h3 className="md:text-2xl lg:text-4xl 2xl:text-5xl 2xl:leading-snug text-xs font-extrabold md:mt-7 mt-2">
                   {item.title}
                 </h3>
-                <div
-                  className={`flex items-center gap-4 md:text-base text-xs ${
+                <motion.div
+                  whileTap={{ scale: 0.9 }}
+                  className={`flex items-center gap-4 md:text-base text-xs cursor-pointer ${
                     i === 2
                       ? "text-lemonYellow"
                       : i === 3
@@ -77,14 +89,14 @@ const GridSection = () => {
                 >
                   <BsArrowRight />
                   <p>View work</p>
-                </div>
+                </motion.div>
               </div>
               <img src={item.image} alt="Grid work" className="m-auto w-full" />
-            </li>
+            </motion.li>
           );
         })}
       </ul>
-      <div className="flex gap-4 justify-center items-center font-poppins font-semibold mb-40 mx-auto">
+      <div className="flex gap-4 justify-center items-center font-poppins font-semibold mb-40 mx-auto cursor-pointer">
         <p className="tracking-wide text-sm 2xl:text-xl">
           Check out our client work
         </p>
